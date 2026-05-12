@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boletim - Escola ABC</title>
+<link rel="stylesheet" href="styles2.css">
+<link rel="icon" type="image/png" href="../Imagens/favicon-32x32.png">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- MENU -->
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <a href="inicial_professor.html" class="sidebar-link">Inicio</a>
+            <a href="Turmas_professor.html" class="sidebar-link active">Boletim</a>
+            <a href="Config.html" class="sidebar-link">Configuração</a>
+        </nav>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main">
+
+        <!-- TOPO -->
+        <header class="page-header">
+            <h1>MINHAS TURMAS</h1>
+            <p>Visualize turmas, lance notas e acompanhe o desempenho dos alunos</p>
+        </header>
+
+        <!-- GRID SUPERIOR -->
+        <section class="dashboard-grid">
+
+            <!-- TURMAS -->
+            <section class="card">
+                <h2>Turmas Vinculadas</h2>
+
+                <table class="table-list">
+                    <thead>
+                        <tr>
+                            <th>Turma</th>
+                            <th>Ano</th>
+                            <th>Horário</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1º Ano A</td>
+                            <td>2026</td>
+                            <td>Manhã</td>
+                        </tr>
+
+                        <tr>
+                            <td>2º Ano B</td>
+                            <td>2026</td>
+                            <td>Tarde</td>
+                        </tr>
+
+                        <tr>
+                            <td>3º Ano C</td>
+                            <td>2026</td>
+                            <td>Noite</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- LANÇAR NOTAS -->
+            <section class="card">
+                <h2>Lançar / Alterar Nota</h2>
+
+                <form class="form-grid">
+
+                    <div class="field">
+                        <label>Turma</label>
+                        <select>
+                            <option>1º Ano A</option>
+                            <option>2º Ano B</option>
+                            <option>3º Ano C</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Disciplina</label>
+                        <select>
+                            <option>Matemática</option>
+                            <option>Português</option>
+                            <option>História</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Aluno</label>
+                        <select>
+                            <option>João Silva</option>
+                            <option>Maria Souza</option>
+                            <option>Pedro Lima</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Avaliação</label>
+                        <select>
+                            <option>1ª Nota</option>
+                            <option>2ª Nota</option>
+                            <option>3ª Nota</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label>Nota</label>
+                        <input type="number" step="0.1" placeholder="0 a 10">
+                    </div>
+
+                    <div class="field full">
+                        <button type="submit">Salvar Nota</button>
+                    </div>
+
+                </form>
+            </section>
+
+        </section>
+
+        <!-- LISTA DOS ALUNOS -->
+        <section class="card full-card">
+            <h2>Desempenho da Turma</h2>
+
+            <table class="table-list">
+                <thead>
+                    <tr>
+                        <th>Matrícula</th>
+                        <th>Aluno</th>
+                        <th>1ª Nota</th>
+                        <th>2ª Nota</th>
+                        <th>3ª Nota</th>
+                        <th>Média</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>2026001</td>
+                        <td>João Silva</td>
+                        <td>8.0</td>
+                        <td>9.0</td>
+                        <td>8.5</td>
+                        <td>8.5</td>
+                        <td>Aprovado</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026002</td>
+                        <td>Maria Souza</td>
+                        <td>10.0</td>
+                        <td>9.5</td>
+                        <td>8.8</td>
+                        <td>9.4</td>
+                        <td>Aprovado</td>
+                    </tr>
+
+                    <tr>
+                        <td>2026003</td>
+                        <td>Pedro Lima</td>
+                        <td>6.0</td>
+                        <td>7.0</td>
+                        <td>5.5</td>
+                        <td>6.2</td>
+                        <td>Recuperação</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+</div>
+
+<footer class="page-footer">
+    <p>@copy Escola ABC</p>
+</footer>
+
+</body>
+</html>

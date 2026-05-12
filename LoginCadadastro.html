@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inicio - Escola ABC</title>
+<link rel="icon" type="image/png" href="./Imagens/favicon-32x32.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <a href="index.html" class="sidebar-link active">Início</a>
+            <a href="#" class="sidebar-link">Sobre</a>
+        </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+
+        <!-- Fundo -->
+        <div class="background-image"></div>
+
+        <!-- Área decorativa -->
+        <div class="image-panel"></div>
+
+        <!-- Cabeçalho -->
+        <header class="page-header">
+            <h1>Escola ABC</h1>
+            <p>Bem-vindo ao portal da escola</p>
+        </header>
+
+        <!-- Conteúdo -->
+        <section class="content">
+
+            <!-- Tabs -->
+            <input type="radio" name="tab" id="login-tab" checked>
+            <input type="radio" name="tab" id="signup-tab">
+
+            <div class="tabs">
+                <label for="login-tab" class="tab-label">Login</label>
+                <label for="signup-tab" class="tab-label">Cadastro</label>
+            </div>
+
+            <!-- Login -->
+            <div class="login-box">
+                <form>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" placeholder="Digite seu email">
+                    </div>
+
+                    <div class="field">
+                        <label>Senha</label>
+                        <input type="password" placeholder="Digite sua senha">
+                    </div>
+
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+
+            <!-- Cadastro -->
+            <div class="signup-box">
+                <form>
+
+                    <div class="field">
+                        <label>Nome</label>
+                        <input type="text" placeholder="Seu nome">
+                    </div>
+
+                    <div class="field">
+                        <label>Sobrenome</label>
+                        <input type="text" placeholder="Sobrenome">
+                    </div>
+
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" placeholder="Seu email">
+                    </div>
+
+                    <div class="field">
+                        <label>Telefone</label>
+                        <input type="text" placeholder="Telefone">
+                    </div>
+
+                    <div class="field large">
+                        <label>Senha</label>
+                        <input type="password" placeholder="Crie uma senha">
+                    </div>
+
+                    <div class="field large">
+                        <button type="submit">Cadastrar</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
