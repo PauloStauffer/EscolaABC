@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escola ABC</title>
+<link rel="icon" type="image/png" href="./Imagens/favicon-32x32.png">
+</head>
+  <style>
+    /* ==================================================
+   BODY
+================================================== */
+body{
+    margin:0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color:#2f7cd4;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    /* conteúdo começa mais acima */
+    justify-content:flex-start;
+
+    min-height:100vh;
+    padding:40px 0;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+/* ==================================================
+   CONTAINER PRINCIPAL
+================================================== */
+.container{
+    margin:0 0 25px 0;
+    background-color:white;
+    width:80%;
+    max-width:1500px;
+    min-height:500px;
+
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+
+    display:flex;
+    overflow:hidden;
+}
+
+/* ==================================================
+   LADO ESQUERDO
+================================================== */
+.left{
+    flex:1;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.left h1{
+    font-size:2.5em;
+    color:#000;
+    margin-bottom:20px;
+}
+
+.left p{
+    font-size:1.1em;
+    color:#444;
+    line-height:1.6;
+    margin-bottom:40px;
+}
+
+/* ==================================================
+   BOTÕES
+================================================== */
+.buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.buttons a{
+    padding:12px 30px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn-login{
+    background-color:#245792;
+    color:white;
+}
+
+.btn-login:hover{
+    background-color:#2f7cd4;
+}
+
+.btn-cadastro{
+    background-color:#215999;
+    color:#fff;
+}
+
+.btn-cadastro:hover{
+    background-color:#2f7cd4;
+}
+
+/* ==================================================
+   LADO DIREITO
+================================================== */
+.right{
+    flex:1;
+    background:url('./Imagens/Fundo2.png') center center/cover no-repeat;
+}
+
+/* ==================================================
+   BLOCO DESCRIÇÃO
+================================================== */
+.descricao{
+    margin:0 0 30px 0;
+    background-color:white;
+    width:80%;
+    max-width:1500px;
+    min-height:350px;
+
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+
+    display:flex;
+    overflow:hidden;
+}
+
+/* TEXTO */
+.des-left{
+    flex:1;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.des-left p{
+    font-size:1.08em;
+    color:#444;
+    line-height:1.7;
+    margin-bottom:12px;
+}
+
+/* IMAGEM */
+.des-right{
+    flex:1;
+    background:url('./Imagens/universidade-logo.png') center center/50% no-repeat;
+}
+
+/* ==================================================
+   RESPONSIVO TABLET
+================================================== */
+@media(max-width:992px){
+
+.container,
+.descricao{
+    width:92%;
+}
+
+.left h1{
+    font-size:2.1em;
+}
+
+}
+
+/* ==================================================
+   RESPONSIVO MOBILE
+================================================== */
+@media(max-width:768px){
+
+body{
+    padding:20px 0;
+}
+
+.container,
+.descricao{
+    flex-direction:column;
+    width:94%;
+}
+
+.right{
+    height:280px;
+}
+
+.des-right{
+    height:220px;
+    background-size:45%;
+}
+
+.left,
+.des-left{
+    padding:25px;
+}
+
+.left h1{
+    font-size:1.8em;
+}
+
+.left p,
+.des-left p{
+    font-size:1em;
+}
+
+.buttons{
+    flex-direction:column;
+    gap:12px;
+}
+
+.buttons a{
+    text-align:center;
+}
+
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <h1>Bem-vindo a Escola ABC</h1>
+        <p>O projeto Escola ABC foi desenvolvido com o objetivo de modernizar a gestão escolar por meio de uma plataforma digital prática, organizada e acessível. O site reúne funcionalidades importantes para alunos e professores, facilitando processos do dia a dia dentro da instituição.</p>
+      <div class="buttons">
+        <a href="./Login.html" class="btn-login">Login</a>
+      </div>
+    </div>
+    <div class="right"></div>
+  </div>
+  <div class="descricao">
+    <div class="des-left">
+      <p>Esta aplicação foi utilizada como Trabalho Avaliativo na 
+      Universidade Vila Velha (UVV) no Curso Ciência da Computação da
+      seguinte materia:
+    
+      Design e Desenvolvimento de Banco de Dados II
+    </p>
+      <br>
+      <p>Produzido pelos alunos:</p>
+      <p>Arthur Nascimento Rodrigues; 
+      George Maycon Barbante Rodrigues; 
+      João Arthur Goulart Fortes; 
+      Luisa Doris Leal de Souza; 
+      Paulo de Souza Stauffer Alberto.</p>
+    </div>
+    <div class="des-right"></div>
+  </div>
+</body>
+</html>

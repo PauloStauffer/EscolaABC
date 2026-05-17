@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Inicio - Escola ABC</title>
+
+<link
+rel="icon"
+type="image/png"
+href="./Imagens/favicon-32x32.png">
+
+<link
+rel="stylesheet"
+href="styles.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <nav class="sidebar-nav">
+
+            <a
+            href="index.html"
+            class="sidebar-link active">
+
+                Início
+            </a>
+
+            <a
+            href="#"
+            class="sidebar-link">
+
+                Sobre
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- FUNDO -->
+        <div class="background-image"></div>
+
+        <!-- ÁREA DECORATIVA -->
+        <div class="image-panel"></div>
+
+        <!-- CABEÇALHO -->
+        <header class="page-header">
+
+            <h1>Escola ABC</h1>
+
+            <p>
+                Bem-vindo ao portal da escola
+            </p>
+
+        </header>
+
+
+        <!-- CONTEÚDO -->
+        <section class="content">
+
+            <!-- TABS -->
+            <input
+            type="radio"
+            name="tab"
+            id="login-tab"
+            checked>
+
+            <div class="tabs">
+
+                <label
+                for="login-tab"
+                class="tab-label">
+
+                    Login
+                </label>
+
+            </div>
+
+
+            <!-- LOGIN -->
+            <div class="login-box">
+
+                <form id="loginForm">
+
+    <div class="field">
+
+        <label>
+            Matrícula
+        </label>
+
+        <input
+        type="text"
+
+        id="matricula"
+
+        name="matricula"
+
+        placeholder=
+        "Digite sua matrícula"
+
+        required>
+
+    </div>
+
+
+    <div class="field">
+
+        <label>
+            Senha
+        </label>
+
+        <input
+        type="password"
+
+        id="senha"
+
+        name="senha"
+
+        placeholder=
+        "Digite sua senha"
+
+        required>
+
+    </div>
+
+    <div class="field">
+
+        <label>
+            Tipo de usuário
+        </label>
+
+        <select
+        id="tipo"
+
+        name="tipo">
+
+            <option value="Aluno">
+
+                Aluno
+
+            </option>
+
+            <option value="Professor">
+
+                Professor
+
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <button type="submit">
+
+        Entrar
+
+    </button>
+
+</form>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+document
+
+.getElementById('loginForm')
+
+.addEventListener('submit', async (e) => {
+
+    e.preventDefault()
+
+
+    // DADOS FORMULÁRIO
+    const dados = {
+
+        matricula:
+
+            document
+            .getElementById('matricula')
+            .value
+            .trim(),
+
+        senha:
+
+            document
+            .getElementById('senha')
+            .value
+            .trim(),
+
+        tipo:
+
+            document
+            .getElementById('tipo')
+            .value
+    }
+
+
+    try {
+
+        // REQUISIÇÃO
+        const resposta = await fetch('/login', {
+
+            method: 'POST',
+
+            headers: {
+
+                'Content-Type':
+                    'application/json'
+            },
+
+            body:
+                JSON.stringify(dados)
+        })
+
+
+        // VERIFICA ERRO
+        if(!resposta.ok){
+
+            throw new Error(
+                'Erro no servidor'
+            )
+        }
+
+
+        // RESPOSTA
+        const resultado =
+            await resposta.json()
+
+
+        console.log(resultado)
+
+
+        // LOGIN OK
+        if(resultado.sucesso){
+
+            alert(resultado.mensagem)
+
+
+            // REDIRECIONA
+            if(
+                resultado.usuario.tipo
+                === 'Aluno'
+            ){
+
+                window.location.href =
+                './Aluno/Inicial_aluno.html'
+            }
+
+            else {
+
+                window.location.href =
+                './Professor/Inicial_professor.html'
+            }
+        }
+
+
+        // LOGIN ERRADO
+        else {
+
+            alert(
+                resultado.mensagem
+            )
+        }
+
+    }
+
+    catch(erro){
+
+        console.error(erro)
+
+        alert(
+            'Erro ao conectar com o servidor'
+        )
+    }
+
+})
+
+</script>
+
+</body>
+</html>

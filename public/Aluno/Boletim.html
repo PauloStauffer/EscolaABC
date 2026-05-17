@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Boletim do Aluno - Escola ABC</title>
+        <link rel="stylesheet" href="styles2.css">
+        <link rel="icon" type="image/png" href="../Imagens/favicon-32x32.png">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+    color:#333;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+
+/* CONTEÚDO */
+
+.main{
+    flex:1;
+    padding:40px;
+}
+
+.page-header{
+    margin-bottom:30px;
+}
+
+.page-header h1{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.page-header p{
+    color:#666;
+}
+
+/* CARD */
+
+.card{
+    background:#fff;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* DADOS DO ALUNO */
+
+.student-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.info-box{
+    background:#f8fafc;
+    padding:15px;
+    border-radius:10px;
+}
+
+.info-box span{
+    display:block;
+    font-size:14px;
+    color:#666;
+    margin-bottom:5px;
+}
+
+.info-box strong{
+    font-size:18px;
+}
+
+/* TABELA */
+
+.table-list{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+.table-list thead{
+    background:#3b82f6;
+    color:#fff;
+}
+
+.table-list th,
+.table-list td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+.aprovado{
+    color:green;
+    font-weight:bold;
+}
+
+.recuperacao{
+    color:#d97706;
+    font-weight:bold;
+}
+
+.reprovado{
+    color:red;
+    font-weight:bold;
+}
+
+/* MÉDIA FINAL */
+
+.final-result{
+    margin-top:30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#eff6ff;
+    padding:20px;
+    border-radius:12px;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.final-result h2{
+    color:#1d4ed8;
+}
+
+.final-result .status{
+    font-size:20px;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1e293b;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .main{
+        padding:20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- MENU -->
+    <aside class="sidebar">
+
+        <nav class="sidebar-nav">
+            <a href="Inicial_Aluno.html" class="sidebar-link">Inicio</a>
+            <a href="Boletim_Aluno.html" class="sidebar-link active">Boletim</a>
+            <a href="Config.html" class="sidebar-link">Configuração</a>
+        </nav>
+
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main">
+
+        <!-- TOPO -->
+        <header class="page-header">
+            <h1>BOLETIM ESCOLAR</h1>
+            <p>Visualize suas notas e desempenho escolar</p>
+        </header>
+
+        <!-- DADOS DO ALUNO -->
+        <section class="card">
+
+            <div class="student-info">
+
+                <div class="info-box">
+                    <span>Aluno</span>
+                    <strong>João Silva</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Matrícula</span>
+                    <strong>2026001</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Turma</span>
+                    <strong>3º Ano A</strong>
+                </div>
+
+                <div class="info-box">
+                    <span>Ano Letivo</span>
+                    <strong>2026</strong>
+                </div>
+
+            </div>
+
+            <!-- TABELA DE NOTAS -->
+            <table class="table-list">
+
+                <thead>
+                    <tr>
+                        <th>Disciplina</th>
+                        <th>1ª Nota</th>
+                        <th>2ª Nota</th>
+                        <th>3ª Nota</th>
+                        <th>Média</th>
+                        <th>Situação</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Matemática</td>
+                        <td>8.0</td>
+                        <td>9.0</td>
+                        <td>8.5</td>
+                        <td>8.5</td>
+                        <td class="aprovado">Aprovado</td>
+                    </tr>
+
+                    <tr>
+                        <td>Português</td>
+                        <td>7.0</td>
+                        <td>6.5</td>
+                        <td>8.0</td>
+                        <td>7.2</td>
+                        <td class="aprovado">Aprovado</td>
+                    </tr>
+
+                    <tr>
+                        <td>História</td>
+                        <td>5.0</td>
+                        <td>6.0</td>
+                        <td>5.5</td>
+                        <td>5.5</td>
+                        <td class="recuperacao">Recuperação</td>
+                    </tr>
+
+                    <tr>
+                        <td>Geografia</td>
+                        <td>9.0</td>
+                        <td>8.5</td>
+                        <td>9.5</td>
+                        <td>9.0</td>
+                        <td class="aprovado">Aprovado</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+            <!-- RESULTADO FINAL -->
+            <div class="final-result">
+
+                <div>
+                    <h2>Média Geral: 7.5</h2>
+                </div>
+
+                <div class="status aprovado">
+                    Situação Final: APROVADO
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<footer>
+    <p>&copy; Escola ABC</p>
+</footer>
+
+</body>
+</html>
