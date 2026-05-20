@@ -166,7 +166,6 @@ footer{
 </style>
 
 </head>
-
 <body>
 
 <div class="container">
@@ -198,17 +197,17 @@ footer{
 
                 <div class="info-box">
                     <span>Aluno</span>
-                    <strong>João Silva</strong>
+                    <strong id="nomeAluno"></strong>
                 </div>
 
                 <div class="info-box">
                     <span>Matrícula</span>
-                    <strong>2026001</strong>
+                    <strong id="matriculaAluno"></strong>
                 </div>
 
                 <div class="info-box">
                     <span>Turma</span>
-                    <strong>3º Ano A</strong>
+                    <strong id="turmaAluno"></strong>
                 </div>
 
                 <div class="info-box">
@@ -232,44 +231,7 @@ footer{
                     </tr>
                 </thead>
 
-                <tbody>
-
-                    <tr>
-                        <td>Matemática</td>
-                        <td>8.0</td>
-                        <td>9.0</td>
-                        <td>8.5</td>
-                        <td>8.5</td>
-                        <td class="aprovado">Aprovado</td>
-                    </tr>
-
-                    <tr>
-                        <td>Português</td>
-                        <td>7.0</td>
-                        <td>6.5</td>
-                        <td>8.0</td>
-                        <td>7.2</td>
-                        <td class="aprovado">Aprovado</td>
-                    </tr>
-
-                    <tr>
-                        <td>História</td>
-                        <td>5.0</td>
-                        <td>6.0</td>
-                        <td>5.5</td>
-                        <td>5.5</td>
-                        <td class="recuperacao">Recuperação</td>
-                    </tr>
-
-                    <tr>
-                        <td>Geografia</td>
-                        <td>9.0</td>
-                        <td>8.5</td>
-                        <td>9.5</td>
-                        <td>9.0</td>
-                        <td class="aprovado">Aprovado</td>
-                    </tr>
-
+                <tbody id="tabelaNotas">
                 </tbody>
 
             </table>
@@ -296,6 +258,116 @@ footer{
 <footer>
     <p>&copy; Escola ABC</p>
 </footer>
+
+<script>
+
+async function carregarBoletim() {
+
+    // PEGA USUÁRIO
+    const usuario =
+        JSON.parse(
+            localStorage.getItem('usuario')
+        )
+
+    if (!usuario) {
+
+        window.location.href =
+            '../Login.html'
+
+        return
+    }
+
+    // DADOS ALUNO
+    document.getElementById(
+        'nomeAluno'
+    ).innerText = usuario.nome
+
+    document.getElementById(
+        'matriculaAluno'
+    ).innerText = usuario.matricula
+
+    // BUSCAR BOLETIM
+    const resposta = await fetch(
+
+        `http://localhost:3000/boletim/${usuario.id}`
+
+    )
+
+    const dados =
+        await resposta.json()
+
+    console.log(dados)
+
+    // TURMA
+    if (dados.length > 0) {
+
+        document.getElementById(
+            'turmaAluno'
+        ).innerText = dados[0].Classe
+    }
+
+    // TABELA
+    const tabela =
+        document.getElementById(
+            'tabelaNotas'
+        )
+
+    tabela.innerHTML = ''
+
+    dados.forEach(item => {
+
+        let situacao = ''
+        let classe = ''
+
+        if (item.Valor_Nota >= 7) {
+
+            situacao = 'Aprovado'
+            classe = 'aprovado'
+
+        }
+
+        else if (item.Valor_Nota >= 5) {
+
+            situacao = 'Recuperação'
+            classe = 'recuperacao'
+
+        }
+
+        else {
+
+            situacao = 'Reprovado'
+            classe = 'reprovado'
+
+        }
+
+        tabela.innerHTML += `
+
+            <tr>
+
+                <td>${item.Disciplina}</td>
+
+                <td>${item.Valor_Nota}</td>
+
+                <td>-</td>
+
+                <td>-</td>
+
+                <td>${item.Valor_Nota}</td>
+
+                <td class="${classe}">
+                    ${situacao}
+                </td>
+
+            </tr>
+
+        `
+    })
+
+}
+
+carregarBoletim()
+
+</script>
 
 </body>
 </html>

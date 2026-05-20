@@ -253,28 +253,30 @@ document
         console.log(resultado)
 
 
-        // LOGIN OK
-        if(resultado.sucesso){
+       if (resultado.sucesso) {
 
-            alert(resultado.mensagem)
+    // SALVA USUÁRIO
+    localStorage.setItem(
+        'usuario',
+        JSON.stringify(resultado.usuario)
+    )
 
+    // REDIRECIONA
+    if (resultado.usuario.tipo === 'Aluno') {
 
-            // REDIRECIONA
-            if(
-                resultado.usuario.tipo
-                === 'Aluno'
-            ){
+        window.location.href =
+            './Aluno/Inicial_aluno.html'
 
-                window.location.href =
-                './Aluno/Inicial_aluno.html'
-            }
+    }
 
-            else {
+    else {
 
-                window.location.href =
-                './Professor/Inicial_professor.html'
-            }
-        }
+        window.location.href =
+            './Professor/Inicial_professor.html'
+
+    }
+
+}
 
 
         // LOGIN ERRADO
@@ -302,3 +304,5 @@ document
 
 </body>
 </html>
+
+

@@ -1,78 +1,243 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Inicio - Escola ABC</title>
-<link rel="icon" type="image/png" href="../Imagens/favicon-32x32.png">
-<link rel="stylesheet" href="styles2.css">
+
+<link
+rel="icon"
+type="image/png"
+href="../Imagens/favicon-32x32.png">
+
+<link
+rel="stylesheet"
+href="styles2.css">
+
+<style>
+
+.welcome-card{
+
+    background:#fff;
+    padding:25px;
+    border-radius:16px;
+    margin-bottom:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+}
+
+.welcome-card h2{
+
+    font-size:28px;
+    margin-bottom:10px;
+
+}
+
+.welcome-card p{
+
+    color:#666;
+
+}
+
+.student-grid{
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(220px,1fr));
+
+    gap:20px;
+    margin-bottom:30px;
+
+}
+
+.info-card{
+
+    background:#fff;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+}
+
+.info-card span{
+
+    display:block;
+    color:#666;
+    margin-bottom:8px;
+
+}
+
+.info-card strong{
+
+    font-size:22px;
+    color:#111827;
+
+}
+
+.news-main{
+
+    background:#fff;
+    padding:25px;
+    border-radius:16px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+}
+
+.news-main h2{
+
+    margin-bottom:20px;
+    color:#1e293b;
+
+}
+
+.news-main p{
+
+    line-height:1.8;
+    color:#444;
+    margin-top:20px;
+
+}
+
+.news-image{
+
+    width:50%;
+    border-radius:14px;
+    overflow:hidden;
+    margin-top:20px;
+
+}
+
+.news-image img{
+
+    width:50%;
+    display:block;
+    object-fit:cover;
+
+}
+
+.content-box{
+
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,0.08);
+
+    width:100%;
+
+}
+
+</style>
 
 </head>
 
 <body>
+
 <div class="container">
 
-    <!-- MENU LATERAL -->
+    <!-- MENU -->
     <aside class="sidebar">
-        <nav class="sidebar-nav" aria-label="Navegação do professor">
-            <a href="inicial_professor.html" class="sidebar-link active">Inicio</a>
-            <a href="Turmas_professor.html" class="sidebar-link">Minhas Turmas</a>
-            <a href="Config.html" class="sidebar-link">Configuração</a>
+
+        <nav class="sidebar-nav"
+        aria-label="Navegação do Professor">
+
+            <a
+            href="Inicial_professor.html"
+            class="sidebar-link active">
+
+                Inicio
+
+            </a>
+
+            <a
+            href="Turmas_professor.html"
+            class="sidebar-link">
+
+                Minhas Turmas
+
+            </a>
+
+            <a
+            href="Config.html"
+            class="sidebar-link">
+
+                Configuração
+
+            </a>
+
         </nav>
+
     </aside>
 
     <!-- CONTEÚDO -->
-    <main class="main">
+   <main class="main">
+
+    <!-- ÁREA BRANCA -->
+    <section class="content-box">
 
         <!-- TOPO -->
         <header class="page-header">
-            <h1>PAGINA INICIAL</h1>
+
+            <h1>PÁGINA INICIAL</h1>
+
         </header>
 
-        <!-- ÁREA CENTRAL -->
-        <section class="dashboard-content">
+        <!-- BOAS VINDAS -->
+        <section class="welcome-card">
 
-            <!-- TEXTO LATERAL -->
-            <aside class="news-side">
-                <p>
-                    A escola também reforça a importância de manter a frequência, 
-                    a organização e o foco nos próximos desafios do ano letivo.
-                    Mais do que notas, o objetivo é incentivar o desenvolvimento 
-                    do conhecimento, da responsabilidade e da confiança dos estudantes.
-                </p>
-            </aside>
+            <h2 id="mensagemBoasVindas">
+                Bem-vindo! <strong id="nomeProfessor">
+                    ---
+                            </strong>
+            </h2>
 
-            <!-- NOTÍCIA -->
-            <section class="news-main">
-                <h2>
-                    Escola celebra excelente desempenho dos alunos no encerramento do trimestre
-                </h2>
+            <p>
+                Portal acadêmico da Escola ABC
+            </p>
 
-                <div class="news-image">
-                    <img src="../Imagens/aluno2.png" alt="Alunos estudando">
-                </div>
+        </section>
 
-                <p>
-                    A Escola ABC anunciou nesta semana o lançamento oficial do seu novo Portal do Aluno, uma plataforma digital criada para facilitar a rotina acadêmica dos estudantes e aproximar ainda mais a comunidade escolar da tecnologia.
+    </section>
+    <br>
+        <!-- NOTÍCIA -->
+        <section class="news-main">
 
-                    Com o novo sistema, os alunos poderão acessar informações importantes de forma rápida e segura, como:
+            <h2>
+                Escola celebra excelente desempenho dos alunos no encerramento do trimestre
+            </h2>
 
-                    Consulta de notas e boletins
-                    Frequência escolar
-                    Calendário acadêmico
-                    Avisos e comunicados da escola
-                    Materiais de apoio e tarefas online
-                    Solicitação de documentos escolares
+            <div class="news-image">
 
-                    Segundo a direção da Escola ABC, o objetivo é oferecer mais praticidade para estudantes e responsáveis, além de tornar a comunicação interna mais eficiente.
+                <img
+                src="../Imagens/aluno2.png"
+                alt="Alunos estudando">
 
-                    “Estamos investindo em inovação para proporcionar uma experiência moderna e acessível aos nossos alunos. O Portal do Aluno representa um grande avanço para nossa escola”, destacou a coordenação pedagógica.
+            </div>
 
-                    A novidade também contará com acesso responsivo, permitindo que os estudantes utilizem a plataforma por computador, tablet ou celular.
+            <p>
 
-                    A expectativa é que o Portal do Aluno da Escola ABC entre em funcionamento completo já nas próximas semanas, beneficiando centenas de alunos matriculados.
-                </p>
-            </section>
+                A Escola ABC anunciou nesta semana o lançamento oficial do seu novo Portal do Aluno, uma plataforma digital criada para facilitar a rotina acadêmica dos estudantes e aproximar ainda mais a comunidade escolar da tecnologia.
+
+                Com o novo sistema, os alunos poderão acessar informações importantes de forma rápida e segura, como:
+
+                Consulta de notas e boletins,
+                frequência escolar,
+                calendário acadêmico,
+                avisos e comunicados da escola,
+                materiais de apoio e tarefas online,
+                além da solicitação de documentos escolares.
+
+                Segundo a direção da Escola ABC, o objetivo é oferecer mais praticidade para estudantes e responsáveis, além de tornar a comunicação interna mais eficiente.
+
+            </p>
 
         </section>
 
@@ -81,8 +246,50 @@
 </div>
 
 <footer class="page-footer">
-    <p>@copy Escola ABC</p>
+
+    <p>
+        &copy; Escola ABC
+    </p>
+
 </footer>
+
+<script>
+
+// VERIFICA LOGIN
+const usuario = JSON.parse(
+    localStorage.getItem('usuario')
+)
+
+// SEM LOGIN
+if(!usuario){
+
+    window.location.href =
+        '../Login.html'
+
+}
+
+// MOSTRAR DADOS
+document.getElementById(
+    'nomeProfessor'
+).innerText =
+    usuario.nome
+
+document.getElementById(
+    'matriculaProfessor'
+).innerText =
+    usuario.matricula
+
+document.getElementById(
+    'tipoProfessor'
+).innerText =
+    usuario.tipo
+
+document.getElementById(
+    'mensagemBoasVindas'
+).innerText =
+    `Bem-vindo, ${usuario.nome}!`
+
+</script>
 
 </body>
 </html>
